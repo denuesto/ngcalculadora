@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<!--<link rel="stylesheet" href="css/estilos.css">-->
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>-->
+		<!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular-sanitize.js"></script>-->
+		<script src="js/angular.1.5.0.min.js"></script>
+		<script src="js/calc.js"></script>
+	</head>
+	<body>
+		<div id="contenedor" ng-app="calculadoraAhorro" ng-controller="calculadoraController">
+			<h1>Calculadora ahorro</h1>
+			<hr/>
+			
+			<form>	
+				Ahorro <br/>
+				<input type="number" step="any" ng-model="ahorro"  name="ahorro"/> <br/>
+				Meses <br/>
+				<input type="number" ng-model="meses" name="meses" ng-keyup="calculaAnios()"/> {{anios | number}} años <br/>
+				Interes <br/>
+				<input type="number" step="any" ng-model="tasa"  name="tasa" ng-keyup="calculaTasaAnual()"/> {{tasaAnual | number }} Anual<br/>
+				<button ng-click="calculaAhorro()">Calcular</button>
+			</form>		
+			<hr/>
+			<div>			
+				<h2>Total:{{total | currency}}<h2>
+				<h3>Mes:{{ahorroMensual | currency}}</h3>
+			</div>
+		</div>
+	</body>
+</html>
