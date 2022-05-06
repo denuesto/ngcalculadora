@@ -1,3 +1,4 @@
+//angular js 1
 var app = angular.module('calculadoraAhorro',[]);
 app.controller('calculadoraController',function($scope){
 	
